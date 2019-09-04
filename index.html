@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weird Allergies</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="js/lib/tracery.js"></script>
+    <script src="js/grammar.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="content">
+            <h1>Weird Allergies</h1>
+        </div>
+    </header>
+    <div class="content main">
+        <div id="result">
+            <p id="text"></p>
+            <div id="user">
+                <img src="" alt="" id="userimage">
+                <div id="username"></div>
+            </div>
+        </div>
+        <button type="button" id="refreshBtn">New</button>
+        <span class="hint">(spacebar)</span>
+    </div>
+
+    <script type="text/javascript">
+        var grammar = tracery.createGrammar(grammarData);
+
+        /**
+         * Retrieves a random person from the radomuser.me API and adds it to the UI.
+         */
+        function addRandomPerson() {
+            var imageNode = document.getElementById('userimage');
+            var nameNode = document.getElementById('username');
+            imageNode.src = '';
+            nameNode.innerText = '';
+
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var data = JSON.parse(this.responseText);
+                    var person = data.results[0];
+
+                    // Image
+                    imageNode.src = person.picture.thumbnail;
+
+                    // Name
+                    var name = capitalize(person.name.first) + " " + capitalize(person.name.last);
+                    nameNode.innerText = name;
+                }
+            };
+
+            xhttp.open("GET", "https://randomuser.me/api/", true);
+            xhttp.send();
+        }
+
+        function capitalize(string) {
+            return string.charAt(0).toUpperCase() + string.slice(1);
+        }
+
+        /**
+         * Generate a new text and avatar.
+         */
+        function refresh() {
+            var resultsDiv = document.getElementById('text');
+            var sentence = grammar.createFlattened();
+            resultsDiv.innerText = sentence;
+
+            addRandomPerson();
+        }
+
+        // Enable button click
+        document.getElementById('refreshBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            refresh();
+        });
+
+        // Spacebar
+        document.body.onkeyup = function(e) {
+            if (e.keyCode == 32) {
+                refresh();
+            }
+        }
+
+        refresh();
+    </script>
+</body>
+
+</html>

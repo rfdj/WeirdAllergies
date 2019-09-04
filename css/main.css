@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css?family=Slabo&display=swap');
+
+/*! minireset.css v0.0.5 | MIT License | github.com/jgthms/minireset.css */
+html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,iframe,hr,h1,h2,h3,h4,h5,h6{margin:0;padding:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}ul{list-style:none}button,input,select,textarea{margin:0}html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}img,video{height:auto;max-width:100%}iframe{border:0}table{border-collapse:collapse;border-spacing:0}td,th{padding:0;text-align:left}
+/* MAIN */
+html {
+    font-size: calc((1em + 1vw)/2);
+    font-family: sans-serif;
+    color: #333;
+}
+.content {
+    position: relative;
+    max-width: 90vw;
+    margin: 0 auto;
+}
+header {
+    display: block;
+    height: 6rem;
+    border-bottom: 5px solid #DDD;
+}
+h1 {
+    position: absolute;
+    bottom: -7rem;
+    line-height: 5rem;
+    font-size: 4rem;
+    font-weight: 600;
+}
+.main {
+    padding-top:20vh;
+    font-family: "Slabo";
+    font-size: 4rem;
+}
+#result {
+    position: relative;
+    min-height: 20rem;
+    background-color: #EEE;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+}
+#user {
+    display: block;
+    position: absolute;
+    bottom: 1rem;
+}
+#user #userimage {
+    display: inline-block;
+    width: 46px;
+    height: 46px;
+    vertical-align: middle;
+    border-radius: 50%;
+    background-color: #DDD;
+}
+#user #username {
+    display: inline-block;
+    vertical-align: middle;
+    font-family: "Helvetica";
+    font-size: 2rem;
+    color: #777;
+}
+button {
+    width: 10rem;
+    margin: 2rem 0 0.5rem 0;
+    padding: 1rem 3rem;
+    background-color: #3A3;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1.5rem;
+    color: #FFF;
+}
+button:hover {
+    background-color: #292;
+    cursor: pointer;
+}
+.hint {
+    display: block;
+    width: 10rem;
+    height: 1rem;
+    text-align: center;
+    font-size: 1rem;
+    color: #AAA;
+}
