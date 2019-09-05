@@ -36,19 +36,15 @@
          * Retrieves a random person from the radomuser.me API and adds it to the UI.
          */
         function addRandomPerson() {
-            var imageNode = document.getElementById('userimage');
             var nameNode = document.getElementById('username');
-            imageNode.src = '';
             nameNode.innerText = '';
+            getRandomImage();
 
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                     var data = JSON.parse(this.responseText);
                     var person = data.results[0];
-
-                    // Image
-                    imageNode.src = person.picture.thumbnail;
 
                     // Name
                     var name = capitalize(person.name.first) + " " + capitalize(person.name.last);
@@ -58,6 +54,15 @@
 
             xhttp.open("GET", "https://randomuser.me/api/", true);
             xhttp.send();
+
+        }
+
+        function getRandomImage() {
+            var imageNode = document.getElementById('userimage');
+            imageNode.src = '';
+
+            // imageNode.src = 'https://api.adorable.io/avatars/96/' + Math.random().toString(36);
+            imageNode.src = 'https://robohash.org/' + Math.random().toString(36) + '.png?set=set1&bgset=bg1&size=48x48';
         }
 
         function capitalize(string) {
