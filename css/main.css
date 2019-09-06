@@ -37,8 +37,12 @@ h1 {
     padding: 1rem 2rem;
     border-radius: 5px;
 }
+#result p {
+    margin-bottom: 5rem;
+}
 #user {
     display: block;
+    height: 5rem;
     position: absolute;
     bottom: 1rem;
 }
