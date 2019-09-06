@@ -63,6 +63,10 @@
 
             // imageNode.src = 'https://api.adorable.io/avatars/96/' + Math.random().toString(36);
             imageNode.src = 'https://robohash.org/' + Math.random().toString(36) + '.png?set=set1&bgset=bg1&size=48x48';
+
+            // Randomly flip and/or rotate the image for more variation
+            imageNode.style.transform = (Math.random() >= 0.5) ? "scaleX(1)" : "scaleX(-1)";
+            imageNode.style.transform += " rotate(" + (Math.random() * 2 - 1) * 15 + "deg)";
         }
 
         function capitalize(string) {
