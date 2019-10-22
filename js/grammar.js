@@ -17,7 +17,7 @@ var grammarData = {
     ],
 
     // ALLERGIC CONDITION
-    "IDoSomething": ["I hit my #bodyPart#", "I smell #someSmell#", "I touch #someObject.a#", "I eat #foodItem.a#", "I drink #liquid.a#", "I just think of #foodItem.a#", "I see #someObject.a#", "it's my birthday", "the moon is out", "it's cold outside", "someone kicks me", "someone touches my #bodyPart#"],
+    "IDoSomething": ["I hit my #bodyPart#", "I smell #someSmell#", "I touch #someObject.a#", "I eat #foodItem.a#", "I drink #liquid#", "I just think of #foodItem.a#", "I see #someObject.a#", "it's my birthday", "the moon is out", "it's cold outside", "someone kicks me", "someone touches my #bodyPart#"],
 
     "bodyPart": ["elbow", "nose", "knee", "head", "back", "belly", "chin", "finger", "hip", "tongue"],
     "bodyPartIHaveTwoOf": ["elbow", "knee", "ankle", "foot", "shoulder", "arm", "eyelashes", "eyebrow", "ear", "leg", "hand", "eye", "nostril", "wrist"],
