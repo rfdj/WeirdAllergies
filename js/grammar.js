@@ -17,7 +17,7 @@ var grammarData = {
     ],
 
     // ALLERGIC CONDITION
-    "IDoSomething": ["I hit my #bodyPart#", "I smell #someSmell#", "I touch #someObject.a#", "I eat #foodItem.a#", "I just think of #foodItem.a#", "I see #someObject.a#", "it's my birthday", "the moon is out", "it's cold outside", "someone kicks me", "someone touches my #bodyPart#"],
+    "IDoSomething": ["I hit my #bodyPart#", "I smell #someSmell#", "I touch #someObject.a#", "I eat #foodItem.a#", "I drink #liquid#", "I just think of #foodItem.a#", "I see #someObject.a#", "it's my birthday", "the moon is out", "it's cold outside", "someone kicks me", "someone touches my #bodyPart#"],
 
     "bodyPart": ["elbow", "nose", "knee", "head", "back", "belly", "chin", "finger", "hip", "tongue"],
     "bodyPartIHaveTwoOf": ["elbow", "knee", "ankle", "foot", "shoulder", "arm", "eyelashes", "eyebrow", "ear", "leg", "hand", "eye", "nostril", "wrist"],
@@ -26,7 +26,8 @@ var grammarData = {
 
     // Objects
     "foodItem": ["chocolate bar", "peanut", "potato", "pizza", "#fruit#"],
-    "fruit": ["apple", "banana", "coconut", "grapefruit", "mango", "orange", "peach", "watermelon"],
+    "liquid": ["gasoline", "water", "coffee", "tea", "alcohol", "fruit juice"],
+    "fruit": ["apple", "banana", "coconut", "grapefruit", "kiwi", "mango", "orange", "peach", "pineapple", "watermelon"],
     "otherObject": ["syringe", "smartphone", "spoon", "fork"],
 
     // ALLERGIC REACTION
@@ -35,7 +36,7 @@ var grammarData = {
     "swell": ["swell", "itch", "hurt", "tickle", "turn #color#", "turn numb"],
 
     "color": ["blue", "green", "purple", "red", "white"],
-    "animal": ["alligator", "alpaca", "ant", "armadillo", "baboon", "badger", "bear", "bird", "camel", "cat", "cow", "crab", "dog", "donkey", "elephant", "gorilla", "horse", "kangaroo", "koala", "monkey", "otter", "panda", "pig", "polar bear", "tiger", "zebra"],
+    "animal": ["alligator", "alpaca", "ant", "armadillo", "baboon", "badger", "bear", "bird", "camel", "cat", "cow", "crab", "dog", "donkey", "elephant", "gorilla", "horse", "kangaroo", "koala", "monkey", "otter", "panda", "pig", "polar bear", "tiger", "snake", "spider", "zebra"],
 
     // Adjectives and similar phrases
     "immediately-comp": ["immediately", "extremely", "for at least #timespan#"],
@@ -46,8 +47,9 @@ var grammarData = {
 
     // Time
     "timespan": ["10 minutes", "half an hour", "three hours", "a day", "two weeks"],
-    "lastWeek": ["last week", "yesterday", "this morning", "last monday"],
+    "lastWeek": ["last week", "yesterday", "this morning", "last #day#"],
     "aLittleLater": ["a little later", "afterwards", "right afterwards", "after a while", "then"],
-
+    "day": ["monday","tuesday","wednesday","thursday","friday","saturday","sunday"],
+    
     "leftRight": ["left", "right"]
 }
